@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/zippoxer/pricer/proto";
+option java_multiple_files = true;
+option java_package = "io.grpc.pricer.proto";
+option java_outer_classname = "PricerProto";
+
+package proto;
+
+service Pricer {
+  rpc Price (PriceRequest) returns (PriceReply) {}
+}
+
+message PriceRequest {
+  string token = 1;
+}
+
+message PriceReply {
+  double price = 1;
+}
